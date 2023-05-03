@@ -8,9 +8,11 @@
     <!-- Favicons -->
     <link href="/assets/img/favicon.png" rel="icon">
     <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-  
+
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
   
     <!-- Vendor CSS Files -->
     <link href="/assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
@@ -26,7 +28,11 @@
     <link href="/assets/css/style.css" rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet">
   
-  <title>Shops</title>
+  <title>Login</title>
+  <link rel="stylesheet" href="/css/forms.css">
+  <script src="/js/forms.js" defer=""></script>
+  <script src="/js/login.js" defer=""></script>
+  <script src="/js/validators/util.js" defer=""></script>
   </head>
   
   <body>
@@ -51,10 +57,10 @@
       <ul>
         <li><a class="nav-link" href="/">Home</a></li>
         
-          <li><a href="login.html">Login</a></li>
+          <li><a href="" class="active">Login</a></li>
           <li><a href="signup.html">Signup</a></li>
         
-        <li><a class="nav-link active" href="/all">Shops</a></li>
+        <li><a class="nav-link" href="shops.html">Shops</a></li>
         <li><a class="nav-link scrollto" href="#about">About</a></li>
         <li><a class="nav-link" href="#contact">Contact</a></li>
       </ul>
@@ -63,7 +69,7 @@
         <button class="user-icon" type="button"><i class="bi bi-person-fill"></i></button>
         <ul>
           
-            <li><a href="login.html">Login</a></li>
+       
             <li><a href="signup.html">Sign up</a></li>
           
         </ul>
@@ -79,105 +85,97 @@
     <div class="container">
   
       <div class="d-flex justify-content-between align-items-center">
-        <h2>Shops</h2>
+        <h2>Login</h2>
         <ol>
           <li><a href="/">Home</a></li>
-          <li>All shops</li>
+          <li>Accounts</li>
+          <li>Login</li>
         </ol>
       </div>
   
     </div>
   </section><!-- End Breadcrumbs Section -->
   <main>
-    <div class="container-flex">
-      <h2>Shops</h2>
-      <div class="alerts-container">
+    <div class="form-container">
+      
+      <form id="login" action="/auth/login?" method="post">
+        <div>
+          <h2 class="center">Login</h2>
+        </div>
+        <div class="alerts-container">
     
+      
+    
+    
+      
     
   </div>
   
-      <div class="accordion" id="retailers">
-        
-          <div class="accordion-item">
-            <p class="accordion-header" tabindex="0">
-              <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#ret0" aria-expanded="false" aria-controls="#ret0" id="heading0">retailer1</button>
-            </p>
-            <div class="accordion-collapse collapse" id="ret0" aria-labelledby="heading0" data-bs-parent="#retailers" >
-              <div class="accordion-body">
-                <ul class="dll">
-                  <li><span>Name: </span><span>retailer1</span></li>
-                  <li><span>Contact: </span><span>contact1></li>
-                  <li><span>Email: </span><span>gmail1</span></li>
-                  <li><span>Address: </span><span>address1</span></li>
-                </ul>
-                <p class="row">
-                  <a href="/profile?id=101" class="button small col-7">View profile</a>
-                </p>
-              </div>
-            </div>
+        <div>
+          <div class="field">
+            <label>
+              <input type="text" name="username" placeholder="Username" maxlength="25">
+              <span>Username:</span>
+            </label>
+            <p><span class="error"></span><span class="counter">6/25</span></p>
+            <p><span class="hint"></span></p>
           </div>
-        
-          <div class="accordion-item">
-            <p class="accordion-header" tabindex="0">
-              <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#ret1" aria-expanded="false" aria-controls="#ret1" id="heading1">retailer2</button>
-            </p>
-            <div class="accordion-collapse collapse" id="ret1" aria-labelledby="heading1" data-bs-parent="#retailers">
-              <div class="accordion-body">
-                <ul class="dll">
-                  <li><span>Name: </span><span>retailer2</span></li>
-                  <li><span>Contact: </span><span>contact2</span></li>
-                  <li><span>Email: </span><span>gmail2</span></li>
-                  <li><span>Address: </span><span>address2</span></li>
-                </ul>
-                <p class="row">
-                  <a href="/profile?id=102" class="button small col-7">View profile</a>
-                </p>
-              </div>
-            </div>
+        </div>
+        <div>
+          <div class="field">
+            <label>
+              <i class="eye suffix password"></i>
+              <input type="password" name="password" placeholder="Password" maxlength="32" value="">
+              <span>Password:</span>
+            </label>
+            <p><span class="error"></span><span class="counter">15/32</span></p>
+            <p><span class="hint"></span></p>
           </div>
-        
-          <div class="accordion-item">
-            <p class="accordion-header" tabindex="0">
-              <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#ret2" aria-expanded="false" aria-controls="#ret2" id="heading2">retailer3</button>
-            </p>
-            <div class="accordion-collapse collapse" id="ret2" aria-labelledby="heading2" data-bs-parent="#retailers" >
-              <div class="accordion-body">
-                <ul class="dll">
-                  <li><span>Name: </span><span>retailer3</span></li>
-                  <li><span>Contact: </span><span>contact3</span></li>
-                  <li><span>Email: </span><span>gamil3</span></li>
-                  <li><span>Address: </span><span>address3</span></li>
-                </ul>
-                <p class="row">
-                  <a href="/profile?id=103" class="button small col-7">View profile</a>
-                </p>
-              </div>
-            </div>
+        </div>
+        <div>
+          <div class="center"><a class="toggleForm scrollto" href="#forgot">Forgot Password</a></div>
+        </div>
+        <div>
+          <div class="center">New user? <a href="/auth/register">Sign up</a></div>
+        </div>
+        <div>
+          <div class="field">
+            <button class="button">Submit</button>
           </div>
-        
-          <div class="accordion-item">
-            <p class="accordion-header" tabindex="0">
-              <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#ret3" aria-expanded="false" aria-controls="#ret3" id="heading3">retailer4</button>
-            </p>
-            <div class="accordion-collapse collapse" id="ret3" aria-labelledby="heading3" data-bs-parent="#retailers" >
-              <div class="accordion-body">
-                <ul class="dll">
-                  <li><span>Name: </span><span>retailer4</span></li>
-                  <li><span>Contact: </span><span>contact4</span></li>
-                  <li><span>Email: </span><span>gmail4</span></li>
-                  <li><span>Address: </span><span>address4</span></li>
-                </ul>
-                <p class="row">
-                  <a href="/profile?id=104" class="button small col-7">View profile</a>
-                </p>
-              </div>
-            </div>
+        </div>
+      </form>
+      <form id="forgot" class="hidden" action="/auth/forgot" method="get">
+        <div>
+          <h2 class="center">Forgot Password</h2>
+        </div>
+        <div class="alerts-container">
+    
+      
+    
+    
+      
+    
+  </div>
+  
+        <div>
+          <div class="field">
+            <label>
+              <input type="text" name="username" placeholder="Username" maxlength="25">
+              <span>Username:</span>
+            </label>
+            <p><span class="error"></span><span class="counter">6/25</span></p>
+            <p><span class="hint"></span></p>
           </div>
-        
-      </div>
-      <div class="row">
-        <a href="signup.html" class="button">Signup</a>
-      </div>
+        </div>
+        <div>
+          <div class="center"><a class="toggleForm scrollto" href="#login">Login</a></div>
+        </div>
+        <div>
+          <div class="field">
+            <button class="button">Submit</button>
+          </div>
+        </div>
+      </form>
     </div>
   </main>
     
@@ -195,7 +193,7 @@
             <h3>Contact</h3>
             <ul>
               <li><i class="bi bi-geo-alt"></i><p>
-                Address of medilab<br>
+                Address of MedEazy<br>
                 city or region<br>
                 State, Pin code<br>
                 India
